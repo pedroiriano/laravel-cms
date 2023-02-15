@@ -28,14 +28,14 @@
             <div class="mt-4">
                 <x-jet-label for="content" value="{{ __('Content') }}" />
                 <div class="rounded-md shadow-sm">
-                    <div class="mt-1 bg-white">
+                    <div class="mt-1 bg-white">                      
                         <div class="body-content" wire:ignore>
                             <trix-editor
                                 class="trix-content"
                                 x-ref="trix"
                                 wire:model.debounce.100000ms="content"
-                                wire:key="trix-content-unique-key">
-                            </trix-editor>
+                                wire:key="trix-content-unique-key"
+                            ></trix-editor>
                         </div>
                     </div>
                 </div>

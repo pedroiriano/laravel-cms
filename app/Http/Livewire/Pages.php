@@ -11,6 +11,12 @@ class Pages extends Component
     public $slug;
     public $title;
     public $content;
+
+    public function create()
+    {
+        Page::create($this->modelData());
+        $this->modalFormVisible = false;
+    }
     
     /**
      * Show the Form Modal or Create the Function
@@ -20,6 +26,20 @@ class Pages extends Component
     public function createShowModal()
     {
         $this->modalFormVisible = true;
+    }
+    
+    /**
+     * Data for the Model Mapped in this Component
+     *
+     * @return void
+     */
+    public function modelData()
+    {
+        return [
+            'title' => $this->title,
+            'slug' => $this->slug,
+            'content' => $this->content,
+        ];
     }
     
     /**
